@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.text.*?>
+<?import java.lang.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane prefHeight="400.0" prefWidth="600.0" style="-fx-background-color: gainsboro;" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.projektzaispit.controller.KorisnikController">
+   <children>
+      <Button layoutX="530.0" layoutY="354.0" mnemonicParsing="false" onAction="#korisnikAdministration" style="-fx-background-color: Black;" text="Nazad" textFill="#fcfcfc" />
+      <GridPane layoutX="325.0" layoutY="75.0" prefHeight="250.0" prefWidth="255.0">
+        <columnConstraints>
+          <ColumnConstraints hgrow="SOMETIMES" maxWidth="285.0" minWidth="10.0" prefWidth="134.0" />
+          <ColumnConstraints hgrow="SOMETIMES" maxWidth="467.0" minWidth="10.0" prefWidth="121.0" />
+        </columnConstraints>
+        <rowConstraints>
+          <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+          <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+          <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+        </rowConstraints>
+         <children>
+            <Label prefHeight="17.0" prefWidth="85.0" text="Ime korisnika">
+               <font>
+                  <Font size="14.0" />
+               </font></Label>
+            <Label text="Prezime" GridPane.rowIndex="1">
+               <font>
+                  <Font size="14.0" />
+               </font></Label>
+            <Label prefHeight="15.0" prefWidth="72.0" text="JMBG" GridPane.rowIndex="2">
+               <font>
+                  <Font size="14.0" />
+               </font></Label>
+            <TextField fx:id="nameTxt" style="-fx-background-color: darkgrey;" GridPane.columnIndex="1" />
+            <TextField fx:id="surnameTxt" style="-fx-background-color: darkgrey;" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+            <TextField fx:id="JMBGTxt" prefHeight="16.0" prefWidth="267.0" style="-fx-background-color: darkgrey;" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+         </children>
+      </GridPane>
+      <Button layoutX="325.0" layoutY="354.0" mnemonicParsing="false" onAction="#saveKorisnik" style="-fx-background-color: Black;" text="Spasi korisnika" textFill="#fcfcfc" />
+      <TableView fx:id="tableViewKorisnici" layoutX="27.0" layoutY="75.0" onMouseClicked="#selectKorisnik" prefHeight="271.0" prefWidth="270.0" style="-fx-background-color: darkgrey;">
+        <columns>
+          <TableColumn fx:id="tableColumnID" prefWidth="53.0" text="ID" />
+          <TableColumn fx:id="tableColumnFirstname" prefWidth="68.0" text="Ime" />
+            <TableColumn fx:id="tableColumnLastname" prefWidth="77.0" text="Prezime" />
+            <TableColumn fx:id="tableColumnJMBG" prefWidth="70.0" text="JMBG" />
+        </columns>
+      </TableView>
+      <Button layoutX="493.0" layoutY="31.0" mnemonicParsing="false" onAction="#autoAdministration" style="-fx-background-color: Black;" text="Dodaj auto" textFill="#f8f5f5" />
+      <Button fx:id="deleteBtn" disable="true" layoutX="453.0" layoutY="354.0" mnemonicParsing="false" onAction="#deleteKorisnik" style="-fx-background-color: Black;" text="Izbirisi" textFill="#fffbfb" />
+   </children>
+</AnchorPane>
